@@ -48,7 +48,7 @@ const CalendarGrid: React.FC<CalendarGridProps> = ({
   const { themeColors } = useTheme();
 
   return (
-    <div className={`rounded-xl border ${themeColors.border} ${themeColors.surface} overflow-hidden`}>
+    <div className={`rounded-xl border ${themeColors.border} ${themeColors.surface} overflow-hidden`} data-testid="calendar-grid">
 
       {/* Month Title */}
       {/* <div className="bg-blue-600 text-white py-3 text-center font-semibold text-lg"> */}

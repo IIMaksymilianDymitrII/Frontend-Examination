@@ -55,10 +55,10 @@ const WeatherForcast = () => {
           Weather & Driving Tip
         </h2>
         <div className="text-5xl font-bold text-blue-700" data-testid="weather-forcast">
-          {weather?.temperature}°C
+          <span data-testid="weather-temperature">{weather?.temperature}°C</span>
         </div>
 
-        <div className="text-lg text-gray-600 dark:text-gray-300">
+        <div className="text-lg text-gray-600 dark:text-gray-300" data-testid="weather-condition">
           Wind: {weather?.windspeed} m/s
           <br />
           <div className="text-lg text-red-600 dark:text-gray-300">

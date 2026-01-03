@@ -53,7 +53,7 @@ const CalendarDay: React.FC<CalendarDayProps> = ({
       // className={`h-28 p-2 border ${themeColors.border}
       // ${isCurrentMonth ? themeColors.surface : themeColors.elevated}`}
       // onClick={onDateClick}
-
+     data-testid="calendar-day"
       onClick={!isPastDate ? onDateClick : undefined} // only allow click for non-past dates
       className={`h-28 p-2 border ${themeColors.border}
       ${isCurrentMonth ? themeColors.surface : themeColors.elevated}

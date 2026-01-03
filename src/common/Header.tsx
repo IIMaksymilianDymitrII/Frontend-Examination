@@ -131,6 +131,7 @@ const Header: React.FC = () => {
                   <span className="flex items-center gap-1">
                     Cart
                     <span
+                      data-testid="cart-count"
                       className={`
                         px-1.5 py-0.5 rounded-full text-xs font-semibold
                         bg-green-600 text-white

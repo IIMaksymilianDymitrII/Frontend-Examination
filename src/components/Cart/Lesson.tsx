@@ -26,6 +26,7 @@ const Lesson = ({
   const { themeColors } = useTheme();
   return (
     <li
+      data-testid="cart-item"
       className={`flex justify-between w-full ${themeColors.bgWidget} shadow-lg border ${themeColors.border} 
         rounded-lg p-5 `}
     >

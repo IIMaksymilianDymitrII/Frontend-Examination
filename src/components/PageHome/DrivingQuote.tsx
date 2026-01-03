@@ -4,7 +4,9 @@ import { useTheme } from "../../context/ThemeContext";
 const DrivingQuote = () => {
   const { themeColors } = useTheme();
   return (
-          <div className={`md:col-span-2 ${themeColors.bgWidget} shadow-lg rounded-lg p-6 flex flex-col justify-center ${themeColors.text} ${themeColors.border} border`}>
+          <div
+          data-testid="driving-quote"
+           className={`md:col-span-2 ${themeColors.bgWidget} shadow-lg rounded-lg p-6 flex flex-col justify-center ${themeColors.text} ${themeColors.border} border`}>
             <h1 className={`text-4xl font-semibold mb-3 ${themeColors.text}`}>
               Build real confidence behind the wheel
             </h1>

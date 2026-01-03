@@ -29,13 +29,14 @@ const CalendarHeader: React.FC<CalendarHeaderProps> = ({
         </button>
 
         {/* <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100"> */}
-        <h2 className={`text-xl font-semibold ${themeColors.text}`}>
+        <h2 className={`text-xl font-semibold ${themeColors.text}`} data-testid="calendar-month">
           {format(currentDate, "MMMM yyyy")}
         </h2>
 
         <button
           onClick={() => setCurrentDate(addMonths(currentDate, 1))}
           className={`px-3 py-1 rounded border ${themeColors.border} ${themeColors.elevated} ${themeColors.text} hover:${themeColors.bgHover}`}
+          data-testid="calendar-next"
         >
           Next →
         </button>

@@ -28,6 +28,7 @@ const CalendarEvent: React.FC<CalendarEventProps> = ({ event, onClick }) => {
     
   return (
     <button
+      data-testid="calendar-event"
       onClick={onClick}
       className={`${instructorColor} w-full text-left px-1 py-0.5 rounded text-white text-xs hover:opacity-90 overflow-hidden`}
     >

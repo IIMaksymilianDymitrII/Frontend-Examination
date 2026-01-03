@@ -20,6 +20,8 @@ const isValidValidUntil = (date: string) => {
 const CheckoutPage = () => {
   const storedUser = localStorage.getItem("user"); // ok
   const loggedInUser = storedUser ? JSON.parse(storedUser) : null; // ok
+  const token = localStorage.getItem("token");
+  const isLoggedIn = !!token;
 
   const { themeColors } = useTheme(); // ok
   const navigate = useNavigate(); // add more navigation if needed
@@ -38,7 +40,7 @@ const CheckoutPage = () => {
   const [formData, setFormData] = useState(() => ({
     email: loggedInUser?.email ?? "",
     firstName: loggedInUser?.name ?? "",
-    lastName: "",
+    lastName: loggedInUser?.lastname ?? "",
     cardNumber: "",
     cvv: "",
     validUntil: "",
@@ -127,7 +129,7 @@ const CheckoutPage = () => {
             </button>
 
             <button
-              onClick={() => setStep(1)}
+              onClick={() => setStep(isLoggedIn ? 2 : 1)}
               className="bg-green-700 rounded-xl px-6 py-2 font-semibold"
             >
               Proceed to Checkout

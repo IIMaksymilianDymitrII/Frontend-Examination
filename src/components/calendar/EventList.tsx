@@ -49,6 +49,7 @@ const EventList: React.FC<EventListProps> = ({
           // >
           <div
             key={ev.id}
+            data-testid="event-item"
             className={`
               p-3 rounded transition
               hover:${themeColors.elevated}

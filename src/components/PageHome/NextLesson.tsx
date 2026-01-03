@@ -6,6 +6,7 @@ const NextLesson = ({ todayLessons }: { todayLessons: Lesson[] }) => {
 
   return (
           <div
+              data-testid="next-lesson"
               className={`${themeColors.bgWidget} 
               shadow-lg rounded-lg p-5 text-sm 
               ${themeColors.text} ${themeColors.border} border`}
