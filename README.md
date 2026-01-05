@@ -4,12 +4,10 @@ A modern, responsive frontend only project - **Driving School Booking & Checkout
 
 ---
 
-## 👥 Contributors
+## 👥 Authors & Contributors
 
 - **Suhagan Mostahid** – Fullstack Open Source (FOS25), Chas Academy
 - **Maksymilian Dymitr** – Fullstack Open Source (FOS25), Chas Academy
-
-Author of documentation: **Suhagan Mostahid**
 
 ---
 
@@ -154,6 +152,28 @@ All shared state is handled **without Redux**, using React Context and hooks.
 - Disable unavailable lessons
 - Keyboard accessibility (ESC to close menus)
 - Mobile-first responsive layout
+
+---
+
+## Testing with Cypress
+
+### Implemented Tests:
+
+- Component rendering tests for Weather Forcast.
+- Checkout test to ensure discount logic and form inputs work correctly.
+- Sign in and Log in test to ensure that new users can login.
+
+### Reasoning:
+
+- Make sure that all crutial components work as expected.
+- All API integration render.
+- Testing ensures that the user can navigate without falling to technical issues
+  that before the lanuch of the application.
+
+### Improvments:
+
+- Secure Authantication Database in further development
+- Secure e2e against edge cases (edited)
 
 ---
 
