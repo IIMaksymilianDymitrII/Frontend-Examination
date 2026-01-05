@@ -4,35 +4,50 @@ A modern, responsive frontend only project - **Driving School Booking & Checkout
 
 ---
 
-## 👥 Authors
+## 👥 Contributors
 
-- **Suhagan Mostahid** – Fullstack Opensource (FOS25), Chas Academy
-- **Maksymilian Dymitr** – Fullstack Opensource (FOS25), Chas Academy
+- **Suhagan Mostahid** – Fullstack Open Source (FOS25), Chas Academy
+- **Maksymilian Dymitr** – Fullstack Open Source (FOS25), Chas Academy
+
+Author of documentation: **Suhagan Mostahid**
 
 ---
 
-## Key Features
+## Core Features
+
+### Home Page (Smart Overview)
+
+- Today’s next booked lessons (time-aware)
+- Next available driving slots
+- Purchased lessons excluded automatically
+- Weather-based driving tips (Open-Meteo API)
+- Clear empty states (e.g. _No lesson booked today_)
 
 ### Schedule & Booking
 
-- Interactive calendar view
-- Past dates and lessons disabled
-- Only current-month lessons shown
-- Event modal with lesson details
-- Duration displayed in **minutes**
+- Interactive calendar grid
+- Dynamically generated calendar layout
+- Past dates and past lessons disabled
+- Only lessons from the selected month shown
+- Modal with:
+  - Instructor
+  - Location
+  - Duration in minutes
+  - Price
+- Add lessons directly to cart
 
-### Shopping Cart
+### Cart
 
 - Add / remove lessons
 - Prevent duplicate lessons
-- Price calculation with VAT (25%)
-- Clear cart functionality
+- Real-time price calculation
+- VAT calculation (25%)
 
 ### Checkout Flow (Multi-Step)
 
 1. **Order Summary**
 
-   - Full cart overview
+   - Detailed cart overview
    - Lesson details (date, time, instructor, price)
    - Apply discount codes
    - Navigate back to Cart or Schedules
@@ -44,23 +59,18 @@ A modern, responsive frontend only project - **Driving School Booking & Checkout
 
 3. **Payment**
 
-   - Card validation
+   - Card number, CVV, expiry validation
    - Apple Pay & Google Pay UI
 
 4. **Confirmation**
 
    - Purchase completion message
+   - Lessons marked as purchased
 
 ### Discounts and benefits
 
 - `STUDENT10` → 10% discount
 - `WINTER20` → 20% discount
-
-### Home Page Intelligence
-
-- **Today’s Next Lessons** (based on current time)
-- **Next Available Slots** (excluding purchased lessons)
-- Weather-based driving tips (Open-Meteo API)
 
 ### Responsive Design
 
@@ -175,94 +185,6 @@ Below are all required dependencies and setup commands.
 
 ---
 
-## Project Setup (Vite)
-
-### 1 Create Vite Project (if starting from scratch)
-
-```bash
-npm create vite@latest driving-school-examination -- --template react-ts
-cd driving-school-examination
-npm install
-```
-
----
-
-## Tailwind CSS Setup
-
-### 2 Install Tailwind CSS & Dependencies
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-
-### 3 Configure `tailwind.config.js`
-
-```ts
-/** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-### 4 Add Tailwind to `src/index.css`
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-if this doesn't functionate, use only following:
-
-```css
-@import "tailwindcss";
-```
-
----
-
-## Core Runtime Dependencies
-
-```bash
-npm install react-router-dom date-fns
-```
-
-| Package            | Purpose                  |
-| ------------------ | ------------------------ |
-| `react-router-dom` | Client-side routing      |
-| `date-fns`         | Date & time calculations |
-| `react`            | UI library               |
-| `react-dom`        | DOM rendering            |
-
----
-
-## Authentication & Utilities
-
-```bash
-npm install @react-oauth/google
-```
-
-| Package               | Purpose              |
-| --------------------- | -------------------- |
-| `@react-oauth/google` | Google login support |
-
----
-
-## Development Dependencies
-
-```bash
-npm install -D typescript
-```
-
-(Vite already includes most dev tooling by default.)
-
----
-
 ## Running the Project
 
 ### Development mode
@@ -332,12 +254,10 @@ The application reflects **real-world frontend development practices** suitable 
 
 ## Future Work & Improvements
 
-The current implementation fulfills all examination requirements.
-However, the system is designed to be **easily extendable**. Below are proposed future improvements that would enhance scalability, usability, and realism.
+The system is designed to be **easily extendable**. Below are proposed future improvements that would enhance scalability, usability, and realism.
 
 ### Scheduling & Calendar Enhancements
 
-- **Auto-generate calendar months** instead of relying on static schedule data
 - **Limit capacity per event** (e.g., max students per lesson)
 - **Instructor availability management** (availability windows, days off, holidays)
 - **Show “Starts in X minutes” badges** for upcoming lessons
@@ -406,12 +326,6 @@ However, the system is designed to be **easily extendable**. Below are proposed 
 - Accessibility audit (WCAG compliance)
 - Multi-language support (Swedish / English)
 - PWA support (installable app)
-
----
-
-### Educational Reflection
-
-These future enhancements demonstrate how the project can evolve from a **frontend examination project** into a **production-ready booking platform**, following scalable software design principles.
 
 ---
 
