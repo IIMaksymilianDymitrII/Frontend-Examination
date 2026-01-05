@@ -181,7 +181,7 @@ All shared state is handled **without Redux**, using React Context and hooks.
 
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/driving-school-examination.git
+git clone https://github.com/IIMaksymilianDymitrII/Frontend-Examination.git
 
 # Install dependencies
 npm install
@@ -192,16 +192,99 @@ npm install
 
 ## Dependencies & Installation
 
-This project is built using **Vite**, **React**, **TypeScript**, and **Tailwind CSS**.
-Below are all required dependencies and setup commands.
-
----
-
 ### System Requirements
 
 - **Node.js** ≥ 18
 - **npm** ≥ 9
   (Recommended: install via Node Version Manager – `nvm`)
+
+---
+
+## Project Setup (Vite)
+
+### 1 Create Vite Project (if starting from scratch)
+
+```bash
+npm create vite@latest frontend-examination -- --template react-ts
+cd frontend-examination
+npm install
+```
+
+---
+
+## Tailwind CSS Setup
+
+### 2 Install Tailwind CSS & Dependencies
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### 3 Configure `tailwind.config.js`
+
+```ts
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: "class",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### 4 Add Tailwind to `src/index.css`
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+if this doesn't functionate, use only following:
+
+```css
+@import "tailwindcss";
+```
+
+---
+
+## Core Runtime Dependencies
+
+```bash
+npm install react-router-dom date-fns
+```
+
+| Package            | Purpose                  |
+| ------------------ | ------------------------ |
+| `react-router-dom` | Client-side routing      |
+| `date-fns`         | Date & time calculations |
+| `react`            | UI library               |
+| `react-dom`        | DOM rendering            |
+
+---
+
+## Authentication & Utilities
+
+```bash
+npm install @react-oauth/google
+```
+
+| Package               | Purpose              |
+| --------------------- | -------------------- |
+| `@react-oauth/google` | Google login support |
+
+---
+
+## Development Dependencies
+
+```bash
+npm install -D typescript
+```
+
+(Vite already includes most dev tooling by default.)
 
 ---
 
@@ -213,7 +296,7 @@ Below are all required dependencies and setup commands.
 npm run dev
 ```
 
-App will be available at:
+App runs at:
 
 ```
 http://localhost:5173
@@ -229,11 +312,18 @@ npm run build
 
 ---
 
-### Preview production build
+### Backend Setup & Execution
+
+Start Backend Server
+
+1. Open a new terminal window
+2. Run the following command:
 
 ```bash
-npm run preview
+node src/Auth/Server.ts
 ```
+
+The Backend and frontend work in parallel, make sure that they run on separate terminals!
 
 ---
 
@@ -245,7 +335,7 @@ Create a `.env` file in the root directory:
 VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
 ```
 
-> ⚠️ Environment variables must start with `VITE_` to be accessible in Vite.
+- Environment variables must start with `VITE_` to be accessible in Vite.
 
 ---
 
