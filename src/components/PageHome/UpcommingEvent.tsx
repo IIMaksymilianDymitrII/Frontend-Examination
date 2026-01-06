@@ -4,7 +4,7 @@ import { useTheme } from "../../context/ThemeContext";
 const UpcommingEvent = () => {
   const { themeColors } = useTheme();
   return (
-          <div className={` ${themeColors.bg} shadow-lg rounded-lg p-5 text-sm ${themeColors.text}`}>
+          <div className={` ${themeColors.bgWidget} shadow-lg rounded-lg p-5 text-sm ${themeColors.text} ${themeColors.border} border`}>
             <h3 className={`text-base font-semibold mb-3 ${themeColors.text}`}>
               Upcoming Events
             </h3>
